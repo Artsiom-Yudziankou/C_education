@@ -1,5 +1,5 @@
 //============================================================================
-// Name        : exercise_1_1.cpp
+// Name        : exercise_1_2.cpp
 // Author      :
 // Version     :
 // Copyright   : Your copyright notice
@@ -13,30 +13,34 @@ using namespace std;
 
 int main()
 {
-	int input_number = 0,
-		temp_value = 0;
+	long long initial_number = 0,
+			  input_number = 0,
+			  temp_value = 0;
 	long long output_number = 0;
 
 	cout << "Enter the input number" << endl;
 	cin >> input_number;
 
-	while (input_number != 0)
+	if (input_number < 0)
 	{
-		temp_value = input_number % 10;
-
-		input_number /= 10;
-
-		output_number = output_number * 10 + temp_value;
+		cout << "False" << endl;
 	}
-
-	if (output_number > INT_MAX || output_number < INT_MIN)
+	else
 	{
-		cout << "Output number is: 0 (Out of range)" << endl;
+		initial_number = input_number;
 
-		return 0;
+		while (input_number != 0)
+		{
+
+			temp_value = input_number % 10;
+
+			input_number /= 10;
+
+			output_number = output_number * 10 + temp_value;
+		}
+
+		initial_number == output_number ? cout << "True" << endl : cout << "False" << endl;
 	}
-
-	cout << "Output number is:" << output_number << endl;
 
 	return 0;
 }
