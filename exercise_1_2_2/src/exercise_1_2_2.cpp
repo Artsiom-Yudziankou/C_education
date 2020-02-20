@@ -81,7 +81,9 @@ int main()
 		}
 	}
 
-	cout << initial_permutation << endl;
+	if (initial_permutation)
+
+		cout << initial_permutation << endl;
 
 	return 0;
 }
